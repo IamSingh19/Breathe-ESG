@@ -4,7 +4,7 @@ import axios from 'axios';
 import RecordTable from '../components/RecordTable';
 import './BatchDetail.css';
 
-const API_BASE = `http://${window.location.hostname}:8000/api`;
+const API_BASE = process.env.REACT_APP_API_URL || `http://${window.location.hostname}:8000/api`;
 
 function BatchDetail() {
   const { batchId } = useParams();
