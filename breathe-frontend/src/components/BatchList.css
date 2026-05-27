@@ -1,0 +1,191 @@
+.batch-list {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.batch-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.batch-list-header h3 {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.batch-count {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.batch-table {
+  overflow-x: auto;
+}
+
+.batch-header {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.7fr 0.7fr 0.9fr 1.2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.batch-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.7fr 0.7fr 0.9fr 1.2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: center;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.batch-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.batch-id-text {
+  font-weight: 500;
+  color: white;
+}
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(50, 130, 184, 0.2);
+  color: #6ee7b7;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid rgba(50, 130, 184, 0.3);
+}
+
+.source-icon {
+  font-size: 1rem;
+}
+
+.record-count {
+  font-weight: 600;
+  color: white;
+}
+
+.flag-count {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.flag-count.has-flags {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  color: white;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.status-approved {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.status-rejected {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.status-icon {
+  font-size: 1rem;
+}
+
+.date-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.view-btn {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #3282b8 0%, #0f4c75 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.view-btn:hover {
+  box-shadow: 0 4px 12px rgba(50, 130, 184, 0.3);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #3282b8 0%, #0f4c75 100%);
+}
+
+@media (max-width: 1024px) {
+  .batch-header,
+  .batch-row {
+    grid-template-columns: 1fr 0.8fr 0.8fr 1fr 0.8fr;
+  }
+
+  .col-date {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .batch-header,
+  .batch-row {
+    grid-template-columns: 1fr 0.8fr 0.8fr;
+  }
+
+  .col-source,
+  .col-records,
+  .col-date,
+  .col-action {
+    display: none;
+  }
+}
