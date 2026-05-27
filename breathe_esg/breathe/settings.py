@@ -127,7 +127,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://192.168.1.4:3000",
-    "https://your-vercel-frontend.vercel.app",
+    "https://breathe-esg-iota-eosin.vercel.app/",
 ]
 
 # REST Framework
