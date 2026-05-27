@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import RecordTable from '../components/RecordTable';
@@ -16,11 +16,7 @@ function BatchDetail() {
   const [reviewerName, setReviewerName] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    fetchBatchDetails();
-  }, [batchId]);
-
-  const fetchBatchDetails = async () => {
+  const fetchBatchDetails = useCallback(async () => {
     try {
       setLoading(true);
       const response = await axios.get(`${API_BASE}/ingestion/batches/${batchId}/records/`);
@@ -32,7 +28,11 @@ function BatchDetail() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [batchId]);
+
+  useEffect(() => {
+    fetchBatchDetails();
+  }, [fetchBatchDetails]);
 
   const handleApprove = async () => {
     try {
